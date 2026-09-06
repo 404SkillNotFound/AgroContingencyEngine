@@ -1,4 +1,8 @@
 from fastapi import FastAPI
+from app.db.database import Base, engine
+from app.models.farm import Farm
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="AgroContingency Engine API")
 
